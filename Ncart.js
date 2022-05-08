@@ -676,6 +676,6 @@ function checkoutbutton(){
         window.location.href="singin.html"
     }
     else{
-        window.location.href="payment.html"
+        window.location.href="p"
     }
 }
