@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300&family=Inconsolata&family=Overpass:wght@200&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        font-family:'Encode Sans', sans-serif;
+    }
+    h3{
+        font-family:calibri
+    }
+    #makeupProducts{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin:auto;
+        width:90%;
+        gap:50px
+    }
+    #makeupProducts > div{
+        width:400px;
+        text-align:center;
+        line-height:10px
+    }
+    #makeupProducts > div>img{
+        width:100%;
+    }
+    button{
+        padding:5px 30px 5px 30px;
+        color:white;
+        background-color:black;
+        font-weight:bold;
+        font-size:17px
+    }
+    #top{
+        width:95%;
+        display:flex;
+        justify-content:flex-end
+    }
+    #sortPrice{
+        padding:10px 20px 10px 20px;
+        text-align:left;
+        font-family:calibri;
+        font-size:16px;
+        font-weight:bold;
+        border:2px solid black;
+    }
+    #header{
+        width:100%;
+        height:auto
+    }
+    img{
+        width:100%;
+        height:300px
+    }
+    #header{
+        position:relative
+    }
+    #header>h1{
+        position:absolute;
+        color:white;
+        margin-left:650px;
+        margin-top:130px;
+    }
+</style>
+<body>
+    <div id="header">
+        <h1>MAKEUP</h1>
+        <img src="https://www.bobbibrown.in/media/export/cms/mpp/FY19/MPP-Category-Header-PC-Skincare_@2x.jpg"/>
+    </div>
+    <div id="top">
+        <select id="sortPrice" onchange="handlePriceSort()">
+            <option value="">SORT BY</option>
+            <option value="asc">PRICE (LOW TO HIGH)</option>
+            <option value="dsc">PRICE (HIGH TO LOW)</option>
+        </select>
+    </div>
+    <div id="makeupProducts"></div>
+</body>
+<script>
+    var makeup_data=[
+        {
+            name:'LUXE ILLUMINATING DUO',
+            desc:'The ultimate illuminating duo',
+            category:'Category:Makeup',
+            price:'4400.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERX6Y1_600x600_0.jpg',
+        },
+        {
+            name:'OPALESCENT DREAM EYE SHADOW PALETTE',
+            desc:'Palette of rich purples and warm metallics',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERJ9Y1_600x600_0.jpg',
+        },
+        {
+            name:'GOLDEN ILLUSION EYE SHADOW PALETTE',
+            desc:'Warm, decadent eye shadow palette',
+            category:'Category:Makeup',
+            price:'5700.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERJAY1_600x600_0.jpg',
+        },
+        {
+            name:'INTENSIVE SERUM FOUNDATION SPF 40/30',
+            desc:'Radiance-boosting foundation',
+            category:'Category:Makeup',
+            price:'6700.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EME715_600x600_0.jpg',
+        },
+        {
+            name:'SKIN CONCEALER STICK',
+            desc:'Easy-to-use, long-lasting concealer stick.',
+            category:'Category:Makeup',
+            price:'2850.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERFJ01_600x600_0.jpg',
+        },
+        {
+            name:'MINI CRUSHED LIP COLOR',
+            desc:'The look of a lipstick meets the feel of a balm',
+            category:'Category:Makeup',
+            price:'1300.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERLC01_600x600_0.jpg',
+        },
+        {
+            name:'FACE AND CHEEK PALETTE',
+            desc:'The look of a lipstick meets the feel of a balm',
+            category:'Category:Makeup',
+            price:'4250.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EPYL03_600x600_0.jpg',
+        },
+        {
+            name:'SKIN LONG-WEAR WEIGHTLESS FOUNDATION MINI',
+            desc:'16-hour, medium coverage matte formula',
+            category:'Category:Makeup',
+            price:'1990.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERE012_600x600_0.jpg',
+        },
+        {
+            name:'MINI CRUSHED LIP COLOR - RUBY',
+            desc:'The look of a lipstick meets the feel of a balm',
+            category:'Category:Makeup',
+            price:'1300.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERYM01_600x600_0.jpg',
+        },
+        {
+            name:'SHEER FINISH PRESSED POWDER',
+            desc:'Portable, oil-absorbing powder',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'	https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ENPT05_600x600_0.jpg',
+        },
+        {
+            name:'MINI HIGHLIGHTING POWDER',
+            desc:'Mini pearlescent illuminator',
+            category:'Category:Makeup',
+            price:'2150.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EPH201_600x600_0.jpg',
+        },
+        {
+            name:'MINI SMOKEY EYE MASCARA',
+            desc:'Ultra-black, volumising formula',
+            category:'Category:Makeup',
+            price:'1900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERYL01_600x600_0.jpg',
+        },
+        {
+            name:'MINI LONG-WEAR CREAM SHADOW STICK',
+            desc:'Does-it-all, budge-proof crayon',
+            category:'Category:Makeup',
+            price:'1800.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ETF209_600x600_0.jpg',
+        },
+        {
+            name:'SHEER FINISH LOOSE POWDER',
+            desc:'Long-lasting, mattifying powder',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ENPW05_600x600_0.jpg',
+        },
+        {
+            name:'MICRO BROW PENCIL',
+            desc:'Precision Definition Brow Pencil',
+            category:'Category:Makeup',
+            price:'3600.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ENJN01_600x600_0.jpg',
+        },
+        {
+            name:'MINI SHIMMER BRICK',
+            desc:'Glow-boosting highlighter',
+            category:'Category:Makeup',
+            price:'2200.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EPH101_600x600_0.jpg',
+        },
+        {
+            name:'LUXE DEFINING LIPSTICK',
+            desc:'Glow-boosting highlighter',
+            category:'Category:Makeup',
+            price:'3700.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ENJ101_600x600_0.jpg',
+        },
+        {
+            name:'REAL NUDES EYE SHADOW PALETTE',
+            desc:'Glow-boosting highlighter',
+            category:'Category:Makeup',
+            price:'4400.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ENWG01_600x600_0.jpg',
+        },
+        {
+            name:'SKIN WEIGHTLESS POWDER FOUNDATION',
+            desc:'Silky, oil-free powder formula.',
+            category:'Category:Makeup',
+            price:'4900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ET5K15_600x600_0.jpg',
+        },
+        {
+            name:'MINI BRONZING POWDER',
+            desc:'Sun-kissed, matte-finish bronzer',
+            category:'Category:Makeup',
+            price:'2200.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ERLN01_600x600_0.jpg',
+        },
+        {
+            name:'EXTRA LIP TINT',
+            desc:'Sheer tinted lip balm',
+            category:'Category:Makeup',
+            price:'2600.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EER903_600x600_0.jpg',
+        },
+        {
+            name:'ULTRA PRECISE EYE LINER BRUSH',
+            desc:'Super-fine, firm brush for eyes',
+            category:'Category:Makeup',
+            price:'4000.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EETX01_600x600_0.jpg',
+        },
+        {
+            name:'SKIN LONG-WEAR FLUID FOUNDATION SPF 20',
+            desc:'Liquid-to-powder foundation',
+            category:'Category:Makeup',
+            price:'3600.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_ENHM04_600x600_0.jpg',
+        },
+        {
+            name:'ANGLED FACE BRUSH',
+            desc:'Soft, sturdy highlighter brush',
+            category:'Category:Makeup',
+            price:'5800.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EF0X01_600x600_0.jpg',
+        },
+        {
+            name:'SOOTHING CLEANSING OIL',
+            desc:'Gentle makeup-dissolving oil',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EM4201_600x600_0.jpg',
+        },
+        {
+            name:'LONG-WEAR GEL EYELINER',
+            desc:'Precise, liquid-like gel liner',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_E0KK01_600x600_0.jpg',
+        },
+        {
+            name:'SKIN FOUNDATION SPF 15',
+            desc:'Water-based, oil-free formula',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_E2LE12_600x600_0.jpg',
+        },
+        {
+            name:'LONG-WEAR EYE BASE',
+            desc:'Crease-proof eyeshadow primer',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_E85F02_600x600_0.jpg',
+        },
+        {
+            name:'BRIGHTENING BRICK',
+            desc:'Illuminating blush and bronzer',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'	https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EA6L06_600x600_0.jpg',
+        },
+        {
+            name:'INTENSIVE SKIN SERUM CONCEALER',
+            desc:'Brightens and boosts hydration',
+            category:'Category:Makeup',
+            price:'3900.00',
+            img:'https://www.bobbibrown.in/media/export/cms/products/600x600/bb_sku_EN6F11_600x600_0.jpg',
+        }
+    ]
+    
+    localStorage.setItem('cartData',JSON.stringify('makeup_data'))
+
+    var makeupProducts=document.querySelector('#makeupProducts')
+
+    var cartLSdata=JSON.parse(localStorage.getItem('cartsData')) || []
+
+    function display(data){
+        makeupProducts.innerHTML=null
+
+        data.forEach(function(elem){
+            var card=document.createElement('div')
+
+            var img=document.createElement('img')
+            img.src=elem.img
+
+            var name=document.createElement('h3')
+            name.innerText=elem.name
+
+            var desc=document.createElement('p')
+            desc.innerText=elem.desc
+            
+            var category=document.createElement('p')
+            category.innerText=elem.category
+
+            var price=document.createElement('p')
+            price.innerText=elem.price
+
+            var button=document.createElement('button')
+            button.innerText='Add to Bag'
+            button.addEventListener('click',function(){
+                addtoBag(elem)
+            })
+
+            card.append(img,name,desc,category,price,button)
+
+            makeupProducts.append(card)
+        })
+    }
+    display(makeup_data)
+
+    // function addtoBag(elem){
+    //     cartLSdata.push(elem);
+    //     localStorage.setItem('cartsData',JSON.stringify(cartLSdata))
+    //     alert('data been pushed')
+    // }
+
+    function addtoBag(el){
+    checkcart(el,cartLSdata)
+
+    if(checkcart(el,cartLSdata)==true){
+        updatacount(el)
+        localStorage.setItem("cartData",JSON.stringify(cartLSdata))
+    }
+    else{
+        el["count"]=1
+        cartLSdata.push(el)
+        localStorage.setItem("cartData",JSON.stringify(cartLSdata))
+    }  
+    }
+
+    function checkcart(el,cartLSdata){
+    for(i=0;i<cartLSdata.length;i++){
+        if(el.name==cartLSdata[i].name)
+        {
+            return true
+        }       
+    }
+    return false 
+    }
+
+    function updatacount(el)
+    {
+    for(i=0;i<cartLSdata.length;i++)
+    {
+     if(el.name==cartLSdata[i].name)
+     {        
+        cartLSdata[i].count+=Number(1)       
+     }
+    }
+    }
+
+
+    function handlePriceSort()
+    {
+        var selected=document.querySelector('#sortPrice').value
+        if (selected=='dsc')
+        {
+            makeup_data.sort(function(a,b){
+                return b.price-a.price
+            })
+            display(makeup_data)
+        }
+        if (selected=='asc')
+        {
+            makeup_data.sort(function(a,b){
+                return a.price-b.price
+            })
+            display(makeup_data)
+        }
+    }
+
+
+</script>
+</html>
