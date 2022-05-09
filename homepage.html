@@ -1201,8 +1201,12 @@
 
     document.querySelector(".arrow").addEventListener("click",topFunc);
     function topFunc(){
-    window.scrollTo(0,0);
-  }
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
   });
 
   const new_tab = document.querySelector(".new");
