@@ -700,6 +700,24 @@
         text-decoration: none;
         color: rgb(167, 167, 167);
       }
+      .arrow{
+        display: none;
+        position: sticky;
+        z-index: 500;
+        top: 500px;
+        left: 94%;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        border: 1px solid white;
+        background-color: black;
+        cursor: pointer;
+      }
+      .arrow > *{
+        text-align: center;
+        margin-top: 6px;
+        color: white;
+      }
     </style>
     <title>
       Bobbi Brown India - Skincare and Makeup Products | Official Site
@@ -857,6 +875,9 @@
         <div class="carousel__indicator"></div>
         <div class="carousel__indicator"></div>
       </div>
+    </div>
+    <div class="arrow">
+      <h1>&#8593</h1>
     </div>
     <div class="products__container">
       <div class="products__title">GOTTA HAVE IT</div>
@@ -1171,9 +1192,17 @@
       document.querySelector(".section").style.position = "sticky";
       document.querySelector(".section").style.top = "0";
       document.querySelector(".section").style.zIndex = "200";
+      document.querySelector(".arrow").style.display = "block";
+
     } else {
       document.querySelector(".section").style.display = "none";
+      document.querySelector(".arrow").style.display = "none";
     }
+
+    document.querySelector(".arrow").addEventListener("click",topFunc);
+    function topFunc(){
+    window.scrollTo(0,0);
+  }
   });
 
   const new_tab = document.querySelector(".new");
@@ -1238,5 +1267,4 @@
       window.location.href = "userProfile.html";
     }
   }
-  
 </script>
