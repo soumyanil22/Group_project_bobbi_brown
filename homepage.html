@@ -35,7 +35,11 @@
         padding-top: 20px;
         z-index: 200;
       }
-      #navbar__container > div > p {
+      #navbar__container > div > a{
+        color: white;
+        text-decoration: none;
+      }
+      #navbar__container > div > a > p {
         font-size: 11px;
         font-weight: bold;
         padding: 16px 7px 0;
@@ -707,7 +711,7 @@
     <!-- Navbar -->
     <div id="navbar__container">
       <div>
-        <p>EMAIL SIGN UP</p>
+        <a href="gsignup.html"><p>EMAIL SIGN UP</p></a>
         <div>
           <div class="menu__item">
             <a href="#">
@@ -718,7 +722,7 @@
             </a>
           </div>
           <div class="menu__item">
-            <a href="usersign.html">
+            <a  id="profile" href="#">
               <img
                 src="https://www.bobbibrown.in/sites/bobbibrown/themes/bb_base/img/icons/svg/MyAccount-White.svg"
                 alt="profile"
@@ -736,7 +740,7 @@
         </div>
       </div>
       <div>
-        <a href="#" id="logo">
+        <a href="homepage.html" id="logo">
           <img
             src="https://www.bobbibrown.in/media/export/cms/logo.png"
             alt="Bobbi Brown"
@@ -1220,4 +1224,19 @@
     new_tab.append(div);
     new_tab.style.zIndex = "100";
   });
+
+
+  let profile = document.querySelector("#profile").addEventListener("click",proFunc);
+
+  function proFunc(){
+    // event.preventDefault();
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    if(userData == null || userData == undefined ){
+      window.location.href = "usersign.html";
+    }
+    else{
+      window.location.href = "userProfile.html";
+    }
+  }
+  
 </script>
