@@ -1,11 +1,11 @@
 
 
 document.querySelector("#btnsign").addEventListener("click",emailSign);
-var mail=document.getElementById("email").value;
+var mail=document.getElementById("eemail").value;
 var error=document.getElementById("error");
 function emailSign()
 {
-    if(document.getElementById("email").value==null ||  document.getElementById("email").value==''){
+    if(document.getElementById("eemail").value==null ||  document.getElementById("eemail").value==''){
       error.style.display="block";
 
     }

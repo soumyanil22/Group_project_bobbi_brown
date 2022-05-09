@@ -71,6 +71,8 @@ function checkuser() {
         };
        loginUser.push(user);
        console.log(user)
+       var xyz=["allow"];
+       localStorage.setItem("accdata",JSON.stringify(xyz));
         localStorage.setItem("loginData", JSON.stringify(loginUser));
     
 
@@ -79,6 +81,8 @@ function checkuser() {
       }
     });
     if (!flag) {
+      var xyz=[];
+      localStorage.setItem("accdata",JSON.stringify(xyz));
       alert("please check Your Gmail or Password are correct!");
     } else {
       window.location.href = "homepage.html";
