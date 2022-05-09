@@ -672,10 +672,10 @@ function finalcost(subarrsum,txt){
 }
 
 function checkoutbutton(){
-    if(sinindata[0]=="notallowde"){
-        window.location.href="singin.html"
+    if(sinindata[0]=="allow"){
+        window.location.href="shipping.html"
     }
     else{
-        window.location.href="p"
+        window.location.href="usersign.html "
     }
 }
