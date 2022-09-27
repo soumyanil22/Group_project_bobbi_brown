@@ -128,13 +128,6 @@ Click on name to visit Github Account
 - [Surya Moharana](https://github.com/SuryAMoharana)
 
 
-## 🔗 Linkedin
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kundan-wakudkar-b4664b233/)
-
-
-[Kundan Wakudkar](https://www.linkedin.com/in/kundan-wakudkar-b4664b233/), 
-
 
 
 
