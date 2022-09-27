@@ -121,11 +121,12 @@ After clicking on proceed button of cart, we will be redirected to payment page,
 
 ## Team
 Click on name to visit Github Account
+- [ROHIT KAPADE](https://github.com/rohitkapade)
 - [Kundan Wakudkar](https://github.com/Kundan-10)
 - [Soumyanil Podder](https://github.com/soumyanil22)
 - [Nikhil-81](https://github.com/Nikhil-81)
 - [Surya Moharana](https://github.com/SuryAMoharana)
-- [ROHIT KAPADE](https://github.com/rohitkapade)
+
 
 ## 🔗 Linkedin
 
@@ -135,12 +136,8 @@ Click on name to visit Github Account
 [Kundan Wakudkar](https://www.linkedin.com/in/kundan-wakudkar-b4664b233/), 
 
 
-## Authors
-Click the name to visit their Github Profile
-- [Kundan Wakudkar](https://github.com/Kundan-10)
 
-## Support
 
-For support, email - [Kundanwakudkar10@gmail.com](Kundanwakudkar10@gmail.com)
+
 
 
