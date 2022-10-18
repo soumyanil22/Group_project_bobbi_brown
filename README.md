@@ -23,12 +23,10 @@ We completed this project within a week.
 - References : [MDN Docs](https://developer.mozilla.org/en-US/) | [W3School](https://www.w3schools.com/)
 
 ## Tech Stack
-- React
-- Redux
 - HTML 5
 - CSS 3
 - JavaScript
-- CSS Library — Bootstrap, Tailwind CSS, Material-UI
+- CSS Library — Bootstrap
 - Github
 
 **Client:** [bobbibrowncosmetics.com](https://www.bobbibrowncosmetics.com/)
