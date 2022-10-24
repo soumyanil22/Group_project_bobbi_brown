@@ -83,7 +83,7 @@ Here we can see the details of the selected item just by a single click.
 
 After adding all the required grocery items we can go to cart where all selected items will be displayed and here in cart we can increase , decrease or remove items from the cart.
 
-![8-Cart](https://user-images.githubusercontent.com/101393406/191696068-5d9430fb-3215-467d-bd01-4f0640ee1508.png)
+![c1](https://user-images.githubusercontent.com/101917670/197589618-c4d80fea-1ce0-4998-90d6-b6b1e7b3f98b.PNG)
 
 
 ### 7. Offers page
