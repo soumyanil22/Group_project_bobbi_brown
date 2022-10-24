@@ -80,10 +80,13 @@ Here we can see the details of the selected item just by a single click.
 
 
 ### 6. Cart page
+A cart page has two UI which conditionally renders  depending weather cart is empty or at least has one item inside.
+After adding all the required grocery items we can go to cart where all selected items will be displayed and here in cart we can increase , decrease or remove items from the cart,and also we can apply for discount using coupon coad.
 
-After adding all the required grocery items we can go to cart where all selected items will be displayed and here in cart we can increase , decrease or remove items from the cart.
-
+## Empty Cart
 ![c1](https://user-images.githubusercontent.com/101917670/197589618-c4d80fea-1ce0-4998-90d6-b6b1e7b3f98b.PNG)
+
+## Cart with items
 
 
 ### 7. Offers page
