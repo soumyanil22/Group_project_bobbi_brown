@@ -87,6 +87,7 @@ After adding all the required grocery items we can go to cart where all selected
 ![c1](https://user-images.githubusercontent.com/101917670/197589618-c4d80fea-1ce0-4998-90d6-b6b1e7b3f98b.PNG)
 
 ## Cart with items
+![c2](https://user-images.githubusercontent.com/101917670/197591534-ec14a81b-81c1-498f-ae1a-47dd6f03ca94.PNG)
 
 
 ### 7. Offers page
