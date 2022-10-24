@@ -126,7 +126,7 @@ Click on name to visit Github Account
 - [ROHIT KAPADE](https://github.com/rohitkapade)
 - [Kundan Wakudkar](https://github.com/Kundan-10)
 - [Soumyanil Podder](https://github.com/soumyanil22)
-- [Nikhil-81](https://github.com/Nikhil-81)
+- [Nikhil Walwatkar](https://github.com/Nikhil-81)
 - [Surya Moharana](https://github.com/SuryAMoharana)
 
 
